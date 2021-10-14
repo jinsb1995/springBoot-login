@@ -60,6 +60,11 @@ public class LoginController {
         return "redirect:/";
     }
 
+    /**
+     * 쿠키에 비밀번호, 신용카드 정보 등 중요한 정보를 넣으면 털릴 위험이 있기 때문에
+     * 중요한 정보를 모두 서버에 저장해야한다.
+     * 그리고 클라이언트와 서버는 추정 불가능한 임의의 식별자 값으로 연결해야 한다.
+     */
     private void expireCookie(HttpServletResponse response, String memberId) {
         Cookie cookie = new Cookie(memberId, null);
         cookie.setMaxAge(0);
