@@ -28,6 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new LogFilter());
         filterRegistrationBean.setOrder(1);
+        // filter로 조회할 영역을 모든 url로 지정한다.
         filterRegistrationBean.addUrlPatterns("/*");
 
         return filterRegistrationBean;
@@ -39,6 +40,7 @@ public class WebConfig implements WebMvcConfigurer {
         FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new LoginCheckFilter());
         filterRegistrationBean.setOrder(2);
+        // filter로 조회할 영역을 모든 url로 지정한다.
         filterRegistrationBean.addUrlPatterns("/*");
 
         return filterRegistrationBean;
